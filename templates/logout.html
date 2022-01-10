@@ -1,0 +1,99 @@
+<html>
+
+<head>
+	<!-- stylesheet -->
+	<link rel="stylesheet" href="https://static.opensuse.org/chameleon-3.0/dist/css/chameleon.css">
+	<!-- favicon -->
+	<link rel="shortcut icon" type="image/x-icon" href="{{ logo }}">
+
+	<script defer src="https://static.opensuse.org/chameleon-3.0/dist/js/jquery.slim.js"></script>
+
+	<script defer src="https://static.opensuse.org/chameleon-3.0/dist/js/bootstrap.bundle.js"></script>
+	<script defer src="https://static.opensuse.org/chameleon-3.0/dist/js/chameleon.js"></script>
+	<title>{{ title }}</title>
+	<style>
+		button {
+			margin: 0 auto;
+			display: block;
+		}
+	</style>
+</head>
+
+<body class="d-flex flex-column">
+	{% if show_navbar == True %}
+	<nav class="navbar noprint navbar-expand-md sticky-top">
+		<a class="navbar-brand" href="/">
+			<img src="{{ logo }}" class="d-inline-block align-top" alt="{{ name }}" title="{{ name }}" width="30"
+				height="30">
+			<span class="navbar-title">{{ title }}</span>
+		</a>
+
+		<div class="collapse navbar-collapse" id="navbar-collapse">
+			<ul class="nav navbar-nav mr-auto flex-md-shrink-0">
+
+		</div>
+		{% endif %}
+
+	</nav>
+	<nav aria-label="breadcrumb">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item"><a href="{{ url }}">Home</a></li>
+			<li class="breadcrumb-item active" aria-current="page">Logout successful</li>
+		</ol>
+	</nav>
+	<main class="page-content flex-fill" aria-label="Content">
+
+		<div class="container my-5 article">
+			<div class="col-md-7 col-12 mx-auto text-justify">
+				{% if show_navbar == False %}
+				<h1> {{ title }}</h1>
+				{% endif %}
+				{% if show_navbar == True %}
+				<p> </p>
+				<br>
+				{% endif %}
+				{% if devmode == True %}
+
+				<div class="container">
+					<div class="toc-scope">
+						<div class="alert alert-warning" role="alert">
+							<h5 class="alert-heading mb-0">Warning</h5>
+							<p>This page is in development mode. This is a security risk. Please disable it in
+								production.</p>
+						</div>
+					</div>
+				</div>
+				{% endif %}
+				<h1>Logout successful</h1>
+				<p>You have been logged out and are being redirected to the home page.</p>
+				<meta http-equiv="refresh" content="3;url={{ url }}" />
+				<p></p>
+			</div>
+		</div>
+	</main>
+	{% if show_footer == True %}
+	<footer class="footer">
+		<div class="container">
+			<div class="d-flex justify-content-between">
+				<div class="footer-copyright">
+					Made as free software with <span class="heart">&hearts;</span> by <a
+						href="https://github.com/KaratekHD/">Karatek</a>
+				</div>
+				<div class="list-inline">
+
+					<a class="list-inline-item" href="https://github.com/KaratekHD/stylusauth">
+						Source
+					</a>
+
+					<a class="list-inline-item" href="https://static.opensuse.org/chameleon/">
+						Theme by openSUSE
+					</a>
+
+				</div>
+			</div>
+		</div>
+	</footer>
+	{% endif %}
+</body>
+
+</html>

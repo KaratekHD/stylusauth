@@ -1,0 +1,19 @@
+[default]
+navbar = True
+footer = True
+title = Karatek Stylusauth
+logo = https://karatek.net/assets/img/kouper-breeze.svg
+url = https://stylusauth.example.com
+key = ThisIsSecret ;Generate with python3 generate_secret.py
+
+[development]
+devmode = False
+
+[oidc]
+realmurl = https://keycloak.example.com/auth/realms/master
+clientid = stylusauth
+
+[stylusboard]
+database = write.db
+path = /home/jens/src/stylusboard
+node = /usr/bin/node16
